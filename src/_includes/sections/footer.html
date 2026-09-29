@@ -1,0 +1,74 @@
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="cs-footer">
+    <div class="cs-container">
+        <div class="cs-top">
+            <div class="cs-cta">
+                <h2 class="cs-title">Schedule Your<br class="cs-break"> Plumbing Service Call</h2>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <div class="cs-nav-group">
+                <div class="cs-nav">
+                    <span class="cs-header">Services</span>
+                    <ul class="cs-ul">
+                        <li class="cs-li"><a href="/residential-service-plumbing/" class="cs-link">Residential Service Plumbing</a></li>
+                        <li class="cs-li"><a href="/remodels/" class="cs-link">Remodels</a></li>
+                        <li class="cs-li"><a href="/water-heaters/" class="cs-link">Water Heaters</a></li>
+                        <li class="cs-li"><a href="/plumbing-diagnostics/" class="cs-link">Plumbing Diagnostics</a></li>
+                    </ul>
+                </div>
+                <div class="cs-nav">
+                    <span class="cs-header">Resources</span>
+                    <ul class="cs-ul">
+                        <li class="cs-li"><a href="/faq/" class="cs-link">FAQs</a></li>
+                        <li class="cs-li"><a href="/maintenance-tips/" class="cs-link">Maintenance Tips</a></li>
+                        <li class="cs-li"><a href="/about/" class="cs-link">About Us</a></li>
+                        <li class="cs-li"><a href="/contact/" class="cs-link">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="cs-contact">
+            <li class="cs-contact-item">
+                <span class="cs-icon-wrapper">
+                    <img class="cs-icon" src="/assets/images/icon-phone.svg" alt="" width="32" height="32" loading="lazy" decoding="async" aria-hidden="true">
+                </span>
+                <span class="cs-contact-text">
+                    <span class="cs-contact-title">Call Us</span>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-contact-link">{{ client.phoneFormatted }}</a>
+                </span>
+            </li>
+            <li class="cs-contact-item">
+                <span class="cs-icon-wrapper">
+                    <img class="cs-icon" src="/assets/images/icon-email.svg" alt="" width="32" height="32" loading="lazy" decoding="async" aria-hidden="true">
+                </span>
+                <span class="cs-contact-text">
+                    <span class="cs-contact-title">Email Us</span>
+                    <a href="mailto:{{ client.email }}" class="cs-contact-link">Click To Email</a>
+                </span>
+            </li>
+            <li class="cs-contact-item">
+                <span class="cs-icon-wrapper">
+                    <img class="cs-icon" src="/assets/images/icon-clock.svg" alt="" width="32" height="32" loading="lazy" decoding="async" aria-hidden="true">
+                </span>
+                <span class="cs-contact-text">
+                    <span class="cs-contact-title">Book A Visit</span>
+                    <a href="/contact/" class="cs-contact-link">Request a service call online</a>
+                </span>
+            </li>
+        </ul>
+        <div class="cs-bottom">
+            <div class="cs-copyright-group">
+                <span class="cs-copyright">&copy; Copyright {% year %} - {{ client.name }}</span>
+                <span class="cs-credit">Design & Hand Coded By <a class="cs-credit-link" href="https://oakharborwebdesigns.com/" target="_blank" rel="noopener">Oak Harbor Web Designs</a></span>
+            </div>
+            <div class="cs-legal">
+                <a class="cs-legal-link" href="/terms-and-conditions/">Terms & Conditions</a>
+                <span class="cs-divider" aria-hidden="true">|</span>
+                <a class="cs-legal-link" href="/privacy-policy/">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>

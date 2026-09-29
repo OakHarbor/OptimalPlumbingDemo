@@ -1,0 +1,42 @@
+---
+title: "Page Not Found | Optimal Plumbing"
+description: "The page you're looking for isn't here. Head back to the Optimal Plumbing homepage, browse our plumbing services, or get in touch to schedule a service call."
+permalink: "/404.html"
+eleventyExcludeFromCollections: true
+bannerTitle: "Page Not Found"
+bannerImage: "/assets/images/about-detail.jpg"
+bannerAlt: "Copper piping with an expansion tank, circulator pump and pressure gauge on a utility room wall"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
+
+    <section id="content-page-713" class="cs-intro">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>That Page Isn't Here</h1>
+                <p>The link may be old, or the address may have a typo. Try one of these instead:</p>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services/">Plumbing Services</a></li>
+                    <li><a href="/faq/">Frequently Asked Questions</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

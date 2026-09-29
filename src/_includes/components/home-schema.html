@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Plumber",
+        "name": "{{ client.name }}",
+        "legalName": "{{ client.legalName }}",
+        "image": "{{ client.domain }}/assets/images/hero.jpg",
+        "logo": "{{ client.domain }}/assets/images/logo.svg",
+        "telephone": "{{ client.phoneFormatted }}",
+        "email": "{{ client.email }}",
+        "url": "{{ client.domain }}/",
+        "description": "Residential plumbing for homeowners: service plumbing, remodels, water heaters, and plumbing diagnostics.",
+        "makesOffer": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Service Plumbing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remodels" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water Heaters" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plumbing Diagnostics" } }
+        ]
+    }
+</script>

@@ -1,0 +1,39 @@
+---
+title: "Plumbing Services | Optimal Plumbing"
+description: "Residential plumbing from Optimal Plumbing: service repairs, remodels, water heaters, and diagnostics that find the real cause before anything gets replaced."
+permalink: "/services/"
+bannerTitle: "Our Services"
+bannerImage: "/assets/images/gallery-1.jpg"
+bannerAlt: "Tankless water heater installed in a closet with new copper and gas lines"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 640, height: 600 }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+    <link rel="stylesheet" href="/assets/css/local.css">
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
+
+    <section id="content-page-713" class="cs-intro">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>Plumbing Services</h1>
+                <p>From a dripping faucet to a full kitchen remodel, {{ client.name }} handles the plumbing homeowners need most. Our core work is residential service plumbing, remodels, and water heaters, backed by a diagnostics-first approach that finds the real cause before anything gets replaced.</p>
+                <p>Every job starts the same way. We listen to what you need, figure out what's actually going on, and explain your options, from a minimal repair to a full upgrade. Then you decide. Browse the services below, or <a href="/contact/">get in touch</a> to talk through your project.</p>
+            </div>
+        </div>
+    </section>
+
+    {% include "sections/services.html" %}
+    {% include "sections/full-range.html" %}
+
+{% endblock %}

@@ -1,0 +1,76 @@
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="{{ client.name }} home page">
+            <img class="cs-light" src="/assets/images/logo.svg" alt="" width="292" height="37" aria-hidden="true" decoding="async">
+            <img class="cs-dark" src="/assets/images/logo-white.svg" alt="" width="292" height="37" aria-hidden="true" loading="lazy" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="cs-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </span>
+            </button>
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul">
+                    <li class="cs-li cs-hide-on-desktop">
+                        <a href="/" class="cs-li-link {% if page.url == "/" %} cs-active {% endif %}" {% if page.url == "/" %} aria-current="page" {% endif %}>
+                            Home
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/about/" class="cs-li-link {% if page.url == "/about/" %} cs-active {% endif %}" {% if page.url == "/about/" %} aria-current="page" {% endif %}>
+                            About
+                        </a>
+                    </li>
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/services/" or page.url == "/residential-service-plumbing/" or page.url == "/remodels/" or page.url == "/water-heaters/" or page.url == "/plumbing-diagnostics/" %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="services-dropdown-toggle">
+                            Services
+                            <img class="cs-drop-icon" src="/assets/images/chevron-down.svg" alt="" width="24" height="24" decoding="async" aria-hidden="true">
+                        </button>
+                        <ul class="cs-drop-ul" aria-labelledby="services-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="/services/" class="cs-li-link cs-drop-link">All Services</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/residential-service-plumbing/" class="cs-li-link cs-drop-link">Residential Service Plumbing</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/remodels/" class="cs-li-link cs-drop-link">Remodels</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/water-heaters/" class="cs-li-link cs-drop-link">Water Heaters</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="/plumbing-diagnostics/" class="cs-li-link cs-drop-link">Plumbing Diagnostics</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/faq/" class="cs-li-link {% if page.url == "/faq/" %} cs-active {% endif %}" {% if page.url == "/faq/" %} aria-current="page" {% endif %}>
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/contact/" class="cs-li-link {% if page.url == "/contact/" %} cs-active {% endif %}" {% if page.url == "/contact/" %} aria-current="page" {% endif %}>
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="/contact/" class="cs-button-outline cs-nav-button">Schedule A Call</a>
+        <button id="dark-mode-toggle" aria-label="dark mode toggle" aria-pressed="false">
+            <img class="cs-moon" aria-hidden="true" src="/assets/svgs/moon.svg" decoding="async" alt="" width="15" height="15">
+            <img class="cs-sun" aria-hidden="true" src="/assets/svgs/sun.svg" decoding="async" alt="" width="15" height="15">
+        </button>
+    </div>
+</header>

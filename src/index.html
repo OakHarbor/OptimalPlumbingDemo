@@ -1,0 +1,101 @@
+---
+title: "Optimal Plumbing | A Plumber You'll Trust For Life"
+description: "Residential plumbing done right: thorough diagnostics, honest communication, and big-business warranty backing at small-business prices for homeowners."
+permalink: "/"
+tags: "sitemap"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/critical.css"/>
+    <script defer src="/assets/js/faq.js"></script>
+
+    {% if client.isProduction %}
+        <link rel="stylesheet" href="/assets/css/local.css" media="print" onload="this.media='all'; this.onload=null;">
+        <noscript>
+            <link rel="stylesheet" href="/assets/css/local.css">
+        </noscript>
+    {% else %}
+        <link rel="stylesheet" href="/assets/css/local.css"/>
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
+
+    <section id="hero-2042">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Plumbing Done Right</span>
+                <h1 class="cs-title">A Plumber You'll Trust <br>For Life</h1>
+                <p class="cs-text">
+                    {{ client.name }} brings thorough diagnostics, honest communication, and the warranty of a big business at small-business prices to homeowners who want it done once, done well.
+                </p>
+                <div class="cs-button-group">
+                    <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cs-background">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | jpeg %}" type="image/jpeg">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | avif %}" type="image/avif">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | webp %}" type="image/webp">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | jpeg %}" alt="Plumber in gray overalls and black gloves working on the pull-down hose of a kitchen faucet" width="1635" height="902" loading="eager" fetchpriority="high" decoding="async">
+            </picture>
+        </div>
+    </section>
+    <!-- ============================================ -->
+    <!--                   Mission                    -->
+    <!-- ============================================ -->
+
+    <section id="mission">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">The Mission</span>
+                <h2 class="cs-title">Built On New Construction, Remodels, And Service Work, All Under One Roof.</h2>
+            </div>
+            <div class="cs-row">
+                <picture class="cs-picture cs-picture-owner">
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | jpeg %}" type="image/jpeg">
+                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | jpeg %}" type="image/jpeg">
+                    <img src="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | jpeg %}" alt="The founder of {{ client.name }} smiling outdoors in a cap and blue polo shirt" width="574" height="708" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-text-group">
+                    <p class="cs-text">
+                        When {{ client.name }} knocks on your door, our goal is to become your trusted plumber for life, earned through communication, fair pricing, and real plumbing expertise.
+                    </p>
+                    <p class="cs-text">
+                        When you call, you get an expert plumber at your door. Our job is to evaluate your plumbing and your needs, then educate you on the options for how we proceed. Many projects, large and small, have more than one solution: sometimes a minimal repair gets your water running again; other times you're ready to invest in a worry-free, Optimal system.
+                    </p>
+                    <p class="cs-text">
+                        <strong>At the end of the day, it's your house, your budget, and your decision.</strong> You will never feel pressured with {{ client.name }}. Your home is your castle and your largest investment, and we treat it that way.
+                    </p>
+                </div>
+                <picture class="cs-picture cs-picture-detail">
+                    <source srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | avif %}" type="image/avif">
+                    <source srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | webp %}" type="image/webp">
+                    <img src="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | jpeg %}" alt="Copper piping with an expansion tank, circulator pump and pressure gauge mounted on a utility room wall" width="240" height="320" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+    {% include "sections/why-choose.html" %}
+    {% include "sections/services.html" %}
+    {% include "sections/full-range.html" %}
+    {% include "sections/reviews.html" %}
+    {% set faqLimit = 6 %}
+    {% include "sections/faq.html" %}
+{% endblock %}

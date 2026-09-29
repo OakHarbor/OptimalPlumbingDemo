@@ -1,0 +1,79 @@
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+{% set faqItems = faq.slice(0, faqLimit) if faqLimit else faq %}
+<section id="faq-1741">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Questions</span>
+            <{{ faqHeading or "h2" }} class="cs-title">Answers Before You Call</{{ faqHeading or "h2" }}>
+        </div>
+        <div class="cs-flex-group">
+            <ul class="cs-faq-group">
+                {% for item in faqItems %}
+                <li class="cs-faq-item{% if loop.first %} active{% endif %}" id="{{ item.id }}">
+                    <h3 class="cs-question">
+                        <button class="cs-button" type="button" aria-expanded="{{ "true" if loop.first else "false" }}" aria-controls="{{ item.id }}-answer" id="{{ item.id }}-button">
+                            <span class="cs-icon" aria-hidden="true"></span>
+                            <span class="cs-button-text">{{ item.question }}</span>
+                        </button>
+                    </h3>
+                    <div class="cs-answer" id="{{ item.id }}-answer" role="region" aria-labelledby="{{ item.id }}-button">
+                        <div class="cs-answer-inner">
+                            <p class="cs-item-text">{{ item.answer | safe }}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="cs-gallery">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 480, height: 585 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 480, height: 585 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 480, height: 585 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 656, height: 800 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 656, height: 800 }) | webp %}" type="image/webp">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" alt="Navien tankless water heater installed in a closet with new copper and gas lines" width="328" height="400" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 480, height: 585 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 480, height: 585 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 480, height: 585 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 656, height: 800 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 656, height: 800 }) | webp %}" type="image/webp">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" alt="Framed sliding glass shower door over a white shower base" width="328" height="400" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 480, height: 585 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 480, height: 585 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 480, height: 585 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 656, height: 800 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 656, height: 800 }) | webp %}" type="image/webp">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" alt="White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower on a slide bar" width="328" height="400" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 480, height: 585 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 480, height: 585 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 480, height: 585 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 656, height: 800 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 656, height: 800 }) | webp %}" type="image/webp">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" alt="Wall-mounted tankless water heater with copper supply lines in an unfinished utility room" width="328" height="400" loading="lazy" decoding="async">
+        </picture>
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 480, height: 585 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 480, height: 585 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 480, height: 585 }) | jpeg %}" type="image/jpeg">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 656, height: 800 }) | avif %}" type="image/avif">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 656, height: 800 }) | webp %}" type="image/webp">
+            <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 656, height: 800 }) | jpeg %}" alt="Brushed nickel shower set with a fixed rain head and a handheld on a slide bar against white wall panels" width="328" height="400" loading="lazy" decoding="async">
+        </picture>
+    </div>
+</section>

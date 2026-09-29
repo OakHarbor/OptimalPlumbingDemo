@@ -1,0 +1,58 @@
+{% if reviews and reviews.length %}
+<!-- ============================================ -->
+<!--                   Reviews                    -->
+<!-- ============================================ -->
+
+<section id="reviews-2541">
+    <div class="cs-container">
+        <div class="cs-content">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | webp %}" type="image/webp">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | jpeg %}" type="image/jpeg">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | avif %}" type="image/avif">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | webp %}" type="image/webp">
+                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | jpeg %}" type="image/jpeg">
+                <img src="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | jpeg %}" alt="Old water heater being drained, rusty water pouring into a street storm drain" width="522" height="294" loading="lazy" decoding="async">
+            </picture>
+            <span class="cs-topper">Homeowners On Optimal</span>
+            <h2 class="cs-title">What It's Like To Work With Us</h2>
+            <p class="cs-text">
+                Straight from the homeowners we've worked with.
+            </p>
+            <a href="/about/" class="cs-button-solid">Learn More About Us</a>
+        </div>
+        <ul class="cs-card-group">
+            {% for review in reviews %}
+            <li class="cs-item">
+                <div class="cs-flex-group">
+                    <div class="cs-info">
+                        {% if review.avatar %}
+                        <picture class="cs-avatar">
+                            <source srcset="{% getUrl review.avatar | resize({ width: 128 }) | avif %}" type="image/avif">
+                            <source srcset="{% getUrl review.avatar | resize({ width: 128 }) | webp %}" type="image/webp">
+                            <img class="cs-profile" src="{% getUrl review.avatar | resize({ width: 128 }) | jpeg %}" alt="" width="64" height="64" loading="lazy" decoding="async" aria-hidden="true">
+                        </picture>
+                        {% else %}
+                        <span class="cs-avatar cs-initial" aria-hidden="true">{{ review.name | first | upper }}</span>
+                        {% endif %}
+                        <span class="cs-name">
+                            {{ review.name }}
+                            {% if review.role %}<span class="cs-job">{{ review.role }}</span>{% endif %}
+                        </span>
+                    </div>
+                    <span class="cs-stars" aria-hidden="true">
+                        <img src="/assets/images/star.svg" alt="" width="21" height="20" aria-hidden="true">
+                        <img src="/assets/images/star.svg" alt="" width="21" height="20" aria-hidden="true">
+                        <img src="/assets/images/star.svg" alt="" width="21" height="20" aria-hidden="true">
+                        <img src="/assets/images/star.svg" alt="" width="21" height="20" aria-hidden="true">
+                        <img src="/assets/images/star.svg" alt="" width="21" height="20" aria-hidden="true">
+                    </span>
+                </div>
+                <p class="cs-review">"{{ review.quote }}"</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endif %}

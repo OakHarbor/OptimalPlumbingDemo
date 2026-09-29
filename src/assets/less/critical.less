@@ -1,0 +1,138 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// CRITICAL PAGE STYLES
+// Above-the-fold and high-priority styles for the home page's landing section.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #hero-2042 {
+        margin: var(--panelInset) var(--panelInset) 0;
+        /* 136px - 160px top leaves room for the navigation */
+        padding: clamp(8.5rem, 20vw, 10rem) clamp(1.5rem, 4vw, 4rem) clamp(4rem, 10vw, 6rem);
+        border-radius: var(--panelRadius);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1344/16rem);
+            margin: auto;
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            max-width: (560/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-topper {
+            margin-bottom: (4/16rem);
+        }
+
+        .cs-title {
+            /* 44px - 77px */
+            font-size: clamp(2.75rem, 5.5vw, 4.8125rem);
+            line-height: 1em;
+            margin: 0 0 (16/16rem);
+            color: #fff;
+        }
+
+        .cs-text {
+            /* 18px - 20px */
+            font-size: clamp(1.125rem, 1.4vw, 1.25rem);
+            font-weight: 500;
+            line-height: 1.5em;
+            margin-bottom: (32/16rem);
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: (8/16rem);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before,
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                mix-blend-mode: multiply;
+                pointer-events: none;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            &:before {
+                background: linear-gradient(90deg, #171717 0%, rgba(23, 23, 23, 0.55) 100%);
+            }
+
+            &:after {
+                background: rgba(23, 23, 23, 0.4);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes image act as a background image */
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-2042 {
+        .cs-background {
+            &:before {
+                background: linear-gradient(-90deg, rgba(23, 23, 23, 0) 20%, #171717 65%);
+            }
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #hero-2042 {
+        /* 546px - 1024px */
+        min-height: min(53.34vw, 64rem);
+        padding-top: (150/16rem);
+        padding-bottom: (150/16rem);
+        display: flex;
+        align-items: center;
+
+        .cs-content {
+            max-width: (449/16rem);
+        }
+
+        .cs-background {
+            &:before {
+                background: linear-gradient(-90deg, rgba(23, 23, 23, 0) 40.76%, #171717 69.15%);
+            }
+        }
+    }
+}

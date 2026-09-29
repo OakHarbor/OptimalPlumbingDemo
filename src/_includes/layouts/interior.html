@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl bannerImage | resize({ width: 640, height: 600 }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+    {% if loadLocal %}<link rel="stylesheet" href="/assets/css/local.css">{% endif %}
+{% endblock %}
+
+{% block body %}
+    {% include "sections/banner.html" %}
+
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
+
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                {{ content | safe }}
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | avif %}" type="image/avif">
+                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | webp %}" type="image/webp">
+                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | jpeg %}" type="image/jpeg">
+                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | avif %}" type="image/avif">
+                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | webp %}" type="image/webp">
+                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | jpeg %}" type="image/jpeg">
+                    <img src="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | jpeg %}" alt="{{ sideAlt }}" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    {% for section in afterSections %}
+        {% include section %}
+    {% endfor %}
+{% endblock %}

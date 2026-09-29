@@ -1,0 +1,25 @@
+---
+title: "Plumbing FAQ | Optimal Plumbing"
+description: "Answers to common homeowner plumbing questions: warranties, scheduling, water heater repair or replacement, tankless units, hidden leaks, and emergency steps."
+permalink: "/faq/"
+bannerTitle: "FAQ"
+crumb: "Frequently Asked Questions"
+bannerImage: "/assets/images/gallery-3.jpg"
+bannerAlt: "White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 640, height: 600 }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/local.css">
+    <script defer src="/assets/js/faq.js"></script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+    {% set faqHeading = "h1" %}
+    {% include "sections/faq.html" %}
+
+{% endblock %}
