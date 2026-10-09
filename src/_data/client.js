@@ -8,4 +8,5 @@ module.exports = {
     domain: "https://optimalplumbingdemo.netlify.app",
     // Passing the isProduction variable for use in HTML templates
     isProduction: process.env.ELEVENTY_ENV === "PROD",
+    isDemo: (process.env.URL || "").includes("netlify.app"),
 };
