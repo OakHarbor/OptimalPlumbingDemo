@@ -7,9 +7,7 @@ permalink: "/about/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 648, position: "attention" }) | avif %}">
     <link rel="stylesheet" href="/assets/css/interior.css">
     <link rel="stylesheet" href="/assets/css/about.css">
 {% endblock %}
@@ -29,7 +27,7 @@ permalink: "/about/"
         </div>
         <picture class="cs-background">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 648, position: "attention" }) | avif %}" type="image/avif">
             <!--Tablet Image-->
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
             <!--Desktop Image-->
