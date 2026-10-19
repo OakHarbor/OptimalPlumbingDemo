@@ -7,13 +7,13 @@
     <div class="cs-container">
         <div class="cs-content">
             <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | avif %}" type="image/avif">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | webp %}" type="image/webp">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 640, height: 360 }) | jpeg %}" type="image/jpeg">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | avif %}" type="image/avif">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | webp %}" type="image/webp">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | jpeg %}" type="image/jpeg">
-                <img src="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1044, height: 588 }) | jpeg %}" alt="Old water heater being drained, rusty water pouring into a street storm drain" width="522" height="294" loading="lazy" decoding="async">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 608, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | jpeg %}" alt="Old water heater being drained, rusty water pouring into a street storm drain" width="522" height="294" loading="lazy" decoding="async">
             </picture>
             <span class="cs-topper">Homeowners On Optimal</span>
             <h2 class="cs-title">What It's Like To Work With Us</h2>
@@ -30,7 +30,6 @@
                         {% if review.avatar %}
                         <picture class="cs-avatar">
                             <source srcset="{% getUrl review.avatar | resize({ width: 128 }) | avif %}" type="image/avif">
-                            <source srcset="{% getUrl review.avatar | resize({ width: 128 }) | webp %}" type="image/webp">
                             <img class="cs-profile" src="{% getUrl review.avatar | resize({ width: 128 }) | jpeg %}" alt="" width="64" height="64" loading="lazy" decoding="async" aria-hidden="true">
                         </picture>
                         {% else %}

@@ -43,13 +43,13 @@ tags: "sitemap"
 
         <div class="cs-background">
             <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | avif %}" type="image/avif">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | webp %}" type="image/webp">
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | jpeg %}" type="image/jpeg">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | avif %}" type="image/avif">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | webp %}" type="image/webp">
-                <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | jpeg %}" type="image/jpeg">
-                <img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1635, height: 902 }) | jpeg %}" alt="Plumber in gray overalls and black gloves working on the pull-down hose of a kitchen faucet" width="1635" height="902" loading="eager" fetchpriority="high" decoding="async">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 608, height: 1290, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1980, height: 1408, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1379, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1379, position: "attention" }) | jpeg %}" alt="Plumber in gray overalls and black gloves working on the pull-down hose of a kitchen faucet" width="1635" height="902" loading="eager" fetchpriority="high" decoding="async">
             </picture>
         </div>
     </section>
@@ -65,13 +65,13 @@ tags: "sitemap"
             </div>
             <div class="cs-row">
                 <picture class="cs-picture cs-picture-owner">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 716, height: 883 }) | jpeg %}" type="image/jpeg">
-                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 601px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1061, height: 1309 }) | jpeg %}" alt="The founder of {{ client.name }} smiling outdoors in a cap and blue polo shirt" width="574" height="708" loading="lazy" decoding="async">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 576, height: 670, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 906, height: 1370, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1148, height: 1416, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 1148, height: 1416, position: "attention" }) | jpeg %}" alt="The founder of {{ client.name }} smiling outdoors in a cap and blue polo shirt" width="574" height="708" loading="lazy" decoding="async">
                 </picture>
                 <div class="cs-text-group">
                     <p class="cs-text">
@@ -85,9 +85,13 @@ tags: "sitemap"
                     </p>
                 </div>
                 <picture class="cs-picture cs-picture-detail">
-                    <source srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | avif %}" type="image/avif">
-                    <source srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | webp %}" type="image/webp">
-                    <img src="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 480, height: 640 }) | jpeg %}" alt="Copper piping with an expansion tank, circulator pump and pressure gauge mounted on a utility room wall" width="240" height="320" loading="lazy" decoding="async">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 620, height: 826, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 1980, height: 826, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Copper piping with an expansion tank, circulator pump and pressure gauge mounted on a utility room wall" width="240" height="320" loading="lazy" decoding="async">
                 </picture>
             </div>
         </div>

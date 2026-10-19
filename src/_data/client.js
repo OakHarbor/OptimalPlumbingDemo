@@ -5,7 +5,7 @@ module.exports = {
     phoneForTel: "425-791-0480",
     phoneFormatted: "(425) 791-0480",
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
-    domain: "https://optimaldemo.netlify.app",
+    domain: "https://example.com",
     // Passing the isProduction variable for use in HTML templates
     isProduction: process.env.ELEVENTY_ENV === "PROD",
     isDemo: (process.env.URL || "").includes("netlify.app"),

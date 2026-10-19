@@ -12,15 +12,12 @@
         </div>
     </div>
     <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="{% getUrl bannerImage | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-        <source media="(max-width: 600px)" srcset="{% getUrl bannerImage | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-        <source media="(max-width: 600px)" srcset="{% getUrl bannerImage | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
-        <source media="(max-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 1600, height: 800 }) | avif %}" type="image/avif">
-        <source media="(max-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 1600, height: 800 }) | webp %}" type="image/webp">
-        <source media="(max-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 1600, height: 800 }) | jpeg %}" type="image/jpeg">
-        <source media="(min-width: 1025px)" srcset="{% getUrl bannerImage | resize({ width: 1800, height: 465 }) | avif %}" type="image/avif">
-        <source media="(min-width: 1025px)" srcset="{% getUrl bannerImage | resize({ width: 1800, height: 465 }) | webp %}" type="image/webp">
-        <source media="(min-width: 1025px)" srcset="{% getUrl bannerImage | resize({ width: 1800, height: 465 }) | jpeg %}" type="image/jpeg">
-        <img src="{% getUrl bannerImage | resize({ width: 1800, height: 465 }) | jpeg %}" alt="{{ bannerAlt }}" width="1800" height="465" loading="eager" decoding="async">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="{% getUrl bannerImage | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+        <!--Tablet Image-->
+        <source media="(max-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+        <!--Desktop Image-->
+        <source media="(min-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+        <img src="{% getUrl bannerImage | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="{{ bannerAlt }}" width="1800" height="465" loading="eager" decoding="async">
     </picture>
 </div>

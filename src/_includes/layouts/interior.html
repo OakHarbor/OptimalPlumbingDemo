@@ -21,13 +21,13 @@
             </div>
             <aside class="cs-aside">
                 <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | avif %}" type="image/avif">
-                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | webp %}" type="image/webp">
-                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 640, height: 480 }) | jpeg %}" type="image/jpeg">
-                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | avif %}" type="image/avif">
-                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | webp %}" type="image/webp">
-                    <source media="(min-width: 601px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl sideImage | resize({ width: 880, height: 1100 }) | jpeg %}" alt="{{ sideAlt }}" width="440" height="550" loading="lazy" decoding="async">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl sideImage | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl sideImage | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl sideImage | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl sideImage | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="{{ sideAlt }}" width="440" height="550" loading="lazy" decoding="async">
                 </picture>
                 <div class="cs-card">
                     <span class="cs-card-title">Need A Plumber?</span>
