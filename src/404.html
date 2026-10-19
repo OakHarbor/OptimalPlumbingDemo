@@ -3,21 +3,39 @@ title: "Page Not Found | Optimal Plumbing"
 description: "The page you're looking for isn't here. Head back to the Optimal Plumbing homepage, browse our plumbing services, or get in touch to schedule a service call."
 permalink: "/404.html"
 eleventyExcludeFromCollections: true
-bannerTitle: "Page Not Found"
-bannerImage: "/assets/images/about-detail.jpg"
-bannerAlt: "Copper piping with an expansion tank, circulator pump and pressure gauge on a utility room wall"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex, follow">
     <link rel="stylesheet" href="/assets/css/interior.css">
 {% endblock %}
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Page Not Found</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/404.html" class="cs-link cs-active" aria-current="page">Page Not Found</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Copper piping with an expansion tank, circulator pump and pressure gauge on a utility room wall" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
     <!-- ============================================ -->
     <!--                 Content Page                 -->

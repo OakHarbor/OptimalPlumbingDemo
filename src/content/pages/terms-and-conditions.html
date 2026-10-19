@@ -2,50 +2,106 @@
 title: "Terms & Conditions | Optimal Plumbing"
 description: "Read the terms and conditions for using the Optimal Plumbing website, including how site information should be used and what a contact form submission means."
 permalink: "/terms-and-conditions/"
-layout: layouts/interior.html
-bannerTitle: "Terms & Conditions"
-bannerImage: "/assets/images/why-choose-bg.jpg"
-bannerAlt: "Copper piping and circulator pumps below a tankless water heater"
-sideImage: "/assets/images/gallery-1.jpg"
-sideAlt: "Tankless water heater installed in a closet with new copper and gas lines"
 ---
 
-<h1>Terms &amp; Conditions</h1>
-<p>These terms apply to your use of this website, which is operated by {{ client.legalName }}, doing business as {{ client.name }} ("we," "us," or "our"). By using this site, you agree to these terms. If you don't agree, please don't use the site.</p>
+{% extends "layouts/base.html" %}
 
-<h2>Use of This Website</h2>
-<p>This website is here to give homeowners general information about our plumbing services and a way to contact us. You agree to use it only for lawful purposes. You agree not to:</p>
-<ul>
-<li>Submit false, misleading, or someone else's information through our contact form</li>
-<li>Try to interfere with the site's operation or security</li>
-<li>Use the site to send spam, malicious code, or unsolicited advertising</li>
-<li>Copy or reuse site content for commercial purposes without our written permission</li>
-</ul>
+{% block head %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+{% endblock %}
 
-<h2>Information on This Site</h2>
-<p>We try to keep the information on this website accurate and up to date, but it is provided for general informational purposes only. Descriptions of services, maintenance tips, and answers to common questions are not a substitute for an on-site evaluation by a qualified plumber.</p>
-<p>Nothing on this website is a quote, an offer, or a binding agreement to perform work. The scope, pricing, and warranty coverage for any job are agreed on directly between you and {{ client.name }} before work begins.</p>
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
 
-<h2>Do-It-Yourself Information</h2>
-<p>Some pages share general maintenance tips. If you choose to perform any plumbing work or maintenance yourself, you do so at your own risk. If you're unsure about any task, especially one involving gas lines, electrical connections, or water heaters, contact a professional.</p>
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Terms &amp; Conditions</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/terms-and-conditions/" class="cs-link cs-active" aria-current="page">Terms &amp; Conditions</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Copper piping and circulator pumps below a tankless water heater" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
-<h2>Contact Form Submissions</h2>
-<p>Submitting our contact form does not create a service agreement or guarantee that we can take on your job. It simply lets us know you'd like to hear from us. How we handle the information you send is described in our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
 
-<h2>Intellectual Property</h2>
-<p>The text, images, logos, and design of this website belong to {{ client.legalName }} or are used with permission. You may view and print pages for your personal, non-commercial use. Any other use requires our written permission.</p>
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>Terms &amp; Conditions</h1>
+                <p>These terms apply to your use of this website, which is operated by {{ client.legalName }}, doing business as {{ client.name }} ("we," "us," or "our"). By using this site, you agree to these terms. If you don't agree, please don't use the site.</p>
 
-<h2>Links to Other Websites</h2>
-<p>This site may link to websites we don't control. We aren't responsible for the content, accuracy, or privacy practices of those sites.</p>
+                <h2>Use of This Website</h2>
+                <p>This website is here to give homeowners general information about our plumbing services and a way to contact us. You agree to use it only for lawful purposes. You agree not to:</p>
+                <ul>
+                <li>Submit false, misleading, or someone else's information through our contact form</li>
+                <li>Try to interfere with the site's operation or security</li>
+                <li>Use the site to send spam, malicious code, or unsolicited advertising</li>
+                <li>Copy or reuse site content for commercial purposes without our written permission</li>
+                </ul>
 
-<h2>Limitation of Liability</h2>
-<p>This website is provided "as is." To the fullest extent allowed by law, {{ client.legalName }} is not liable for any damages arising from your use of this website or your reliance on information found here. This does not affect any rights you have under a separate agreement with us for plumbing work.</p>
+                <h2>Information on This Site</h2>
+                <p>We try to keep the information on this website accurate and up to date, but it is provided for general informational purposes only. Descriptions of services, maintenance tips, and answers to common questions are not a substitute for an on-site evaluation by a qualified plumber.</p>
+                <p>Nothing on this website is a quote, an offer, or a binding agreement to perform work. The scope, pricing, and warranty coverage for any job are agreed on directly between you and {{ client.name }} before work begins.</p>
 
-<h2>Governing Law</h2>
-<p>These terms are governed by the laws of the state in which {{ client.name }} operates.</p>
+                <h2>Do-It-Yourself Information</h2>
+                <p>Some pages share general maintenance tips. If you choose to perform any plumbing work or maintenance yourself, you do so at your own risk. If you're unsure about any task, especially one involving gas lines, electrical connections, or water heaters, contact a professional.</p>
 
-<h2>Changes to These Terms</h2>
-<p>We may update these terms from time to time. Changes take effect when they are posted on this page. Continuing to use the site after a change means you accept the updated terms.</p>
+                <h2>Contact Form Submissions</h2>
+                <p>Submitting our contact form does not create a service agreement or guarantee that we can take on your job. It simply lets us know you'd like to hear from us. How we handle the information you send is described in our <a href="/privacy-policy/">Privacy Policy</a>.</p>
 
-<h2>Contact Us</h2>
-<p>Questions about these terms? Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, email us at <a href="mailto:{{ client.email }}">Click To Email</a>, or visit our <a href="/contact/">contact page</a>.</p>
+                <h2>Intellectual Property</h2>
+                <p>The text, images, logos, and design of this website belong to {{ client.legalName }} or are used with permission. You may view and print pages for your personal, non-commercial use. Any other use requires our written permission.</p>
+
+                <h2>Links to Other Websites</h2>
+                <p>This site may link to websites we don't control. We aren't responsible for the content, accuracy, or privacy practices of those sites.</p>
+
+                <h2>Limitation of Liability</h2>
+                <p>This website is provided "as is." To the fullest extent allowed by law, {{ client.legalName }} is not liable for any damages arising from your use of this website or your reliance on information found here. This does not affect any rights you have under a separate agreement with us for plumbing work.</p>
+
+                <h2>Governing Law</h2>
+                <p>These terms are governed by the laws of the state in which {{ client.name }} operates.</p>
+
+                <h2>Changes to These Terms</h2>
+                <p>We may update these terms from time to time. Changes take effect when they are posted on this page. Continuing to use the site after a change means you accept the updated terms.</p>
+
+                <h2>Contact Us</h2>
+                <p>Questions about these terms? Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, email us at <a href="mailto:{{ client.email }}">Click To Email</a>, or visit our <a href="/contact/">contact page</a>.</p>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Tankless water heater installed in a closet with new copper and gas lines" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

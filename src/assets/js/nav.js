@@ -248,4 +248,9 @@
 	// Initialize navigation system
 	init.inertState();
 	init.eventListeners();
+
+	// Snap the floating nav to the top once the page scrolls
+	const updateScrollState = () => document.body.classList.toggle("scroll", window.scrollY >= 100);
+	updateScrollState();
+	window.addEventListener("scroll", updateScrollState, { passive: true });
 })();

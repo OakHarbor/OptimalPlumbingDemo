@@ -2,24 +2,234 @@
 title: "Plumbing FAQ | Optimal Plumbing"
 description: "Answers to common homeowner plumbing questions: warranties, scheduling, water heater repair or replacement, tankless units, hidden leaks, and emergency steps."
 permalink: "/faq/"
-bannerTitle: "FAQ"
-crumb: "Frequently Asked Questions"
-bannerImage: "/assets/images/gallery-3.jpg"
-bannerAlt: "White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 640, height: 600 }) | avif %}">
-    <link rel="stylesheet" href="/assets/css/local.css">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/faq.css">
     <script defer src="/assets/js/faq.js"></script>
 {% endblock %}
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
-    {% set faqHeading = "h1" %}
-    {% include "sections/faq.html" %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">FAQ</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/faq/" class="cs-link cs-active" aria-current="page">Frequently Asked Questions</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-1741">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions</span>
+                <h1 class="cs-title">Answers Before You Call</h1>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item active" id="pressure">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="true" aria-controls="pressure-answer" id="pressure-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Will I be pressured into a bigger repair than I need?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="pressure-answer" role="region" aria-labelledby="pressure-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">No. We'll walk you through your options, from a minimal repair to a full system upgrade, and leave the decision to you. It's your house, your budget, and your call. Some homeowners just want their running water back today. Others are ready to invest in a long-term fix. Either way, you'll get honest information and no sales pressure.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="different">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="different-answer" id="different-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What makes Optimal Plumbing different?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="different-answer" role="region" aria-labelledby="different-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Three things. Thorough plumbing: we put more rigor into diagnostics and planning up front, so you get a solid plan and a repair that lasts. Communication: we listen carefully to what you need and want. Warranty and value: you get the warranty of a big business at small-business prices. Our goal is to be your trusted plumber for life.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="warranty">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="warranty-answer" id="warranty-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Do you offer a warranty on your work?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="warranty-answer" role="region" aria-labelledby="warranty-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Yes. Our work is backed by a warranty, and our goal is to give you the warranty of a big business at small-business prices. Coverage can vary with the type of job, so we'll go over exactly what's covered for your specific project before any work starts. No surprises after the fact.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="services">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="services-answer" id="services-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What services do you provide?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="services-answer" role="region" aria-labelledby="services-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Our main services are residential service plumbing, remodels, and water heaters, including tankless. We also handle plumbing diagnostics, finding and repairing leaks, boilers and hydronics, repipes, drain cleaning, water filtration, sump pumps, sewage ejector pumps, showers, toilets, faucets, garbage disposals, and gas piping. If it's plumbing in your home, ask us.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="remodels">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="remodels-answer" id="remodels-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Are you experienced with remodels and new construction?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="remodels-answer" role="region" aria-labelledby="remodels-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Yes. Our founder has a background in new construction, remodeling, and service plumbing. That means we know how a system should be laid out from scratch, how to work with the plumbing already in your walls, and what tends to fail years later. We handle remodel plumbing from rough-in through final fixtures.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="schedule">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="schedule-answer" id="schedule-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">How do I schedule a service call?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="schedule-answer" role="region" aria-labelledby="schedule-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> or use our <a href="/contact/">contact page</a> to send a message with a short description of the problem. We'll get back to you to find a time that works. If you're not sure what's wrong, that's fine. Tell us what you're seeing and hearing, and we'll take it from there.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="repair-or-replace">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="repair-or-replace-answer" id="repair-or-replace-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Should I repair or replace my water heater?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="repair-or-replace-answer" role="region" aria-labelledby="repair-or-replace-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">It depends on the problem and the heater's age. A bad thermostat, heating element, or gas valve can often be repaired affordably. A leaking tank can't be fixed and needs replacement. If your heater is older and starting to struggle, putting money into it may only buy a little time. We'll diagnose it and give you an honest recommendation.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="tankless">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="tankless-answer" id="tankless-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Is a tankless water heater worth it?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="tankless-answer" role="region" aria-labelledby="tankless-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">For some homes, yes. Tankless units provide continuous hot water, take up less space, and don't spend energy keeping a tank hot. They cost more up front, and switching often requires gas line, venting, or electrical upgrades. Whether it's worth it depends on your household's hot water use and your home's setup. We'll help you weigh it.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="hidden-leak">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="hidden-leak-answer" id="hidden-leak-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What are the signs of a hidden leak?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="hidden-leak-answer" role="region" aria-labelledby="hidden-leak-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Watch for a water bill that rises without explanation, the sound of running water when everything is off, musty smells, stains or soft spots on walls and ceilings, warm spots on floors, or a water meter that keeps moving with all fixtures off. Any of these is worth a call. Hidden leaks do more damage the longer they run.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="emergency">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="emergency-answer" id="emergency-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What should I do in a plumbing emergency before you arrive?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="emergency-answer" role="region" aria-labelledby="emergency-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Shut off the water. For a single fixture, use the shutoff valve under the sink or behind the toilet. For a burst pipe or major leak, close your main water shutoff valve. For a leaking water heater, close its cold supply valve and turn off the gas or breaker. If you smell gas, leave the house and call your gas utility from outside.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cs-gallery">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 608, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | jpeg %}" alt="Navien tankless water heater installed in a closet with new copper and gas lines" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 608, height: 600, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Framed sliding glass shower door over a white shower base" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 608, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 1980, height: 1372, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 779, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 779, position: "attention" }) | jpeg %}" alt="White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower on a slide bar" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 608, height: 648, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | jpeg %}" alt="Wall-mounted tankless water heater with copper supply lines in an unfinished utility room" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Brushed nickel shower set with a fixed rain head and a handheld on a slide bar against white wall panels" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+        </div>
+    </section>
 
 {% endblock %}

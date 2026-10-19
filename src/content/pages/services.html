@@ -2,22 +2,42 @@
 title: "Plumbing Services | Optimal Plumbing"
 description: "Residential plumbing from Optimal Plumbing: service repairs, remodels, water heaters, and diagnostics that find the real cause before anything gets replaced."
 permalink: "/services/"
-bannerTitle: "Our Services"
-bannerImage: "/assets/images/gallery-1.jpg"
-bannerAlt: "Tankless water heater installed in a closet with new copper and gas lines"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 640, height: 600 }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
     <link rel="stylesheet" href="/assets/css/interior.css">
-    <link rel="stylesheet" href="/assets/css/local.css">
+    <link rel="stylesheet" href="/assets/css/services.css">
 {% endblock %}
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Our Services</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/services/" class="cs-link cs-active" aria-current="page">Our Services</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Tankless water heater installed in a closet with new copper and gas lines" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
     <!-- ============================================ -->
     <!--                 Content Page                 -->
@@ -33,7 +53,88 @@ bannerAlt: "Tankless water heater installed in a closet with new copper and gas 
         </div>
     </section>
 
-    {% include "sections/services.html" %}
-    {% include "sections/full-range.html" %}
+    <!-- ============================================ -->
+    <!--                   Services                   -->
+    <!-- ============================================ -->
+
+    <section id="services-2527">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Where We Focus</span>
+                <h2 class="cs-title">The Services We're Built Around</h2>
+                <p class="cs-text">
+                    From everyday residential repairs to full remodels, these are the jobs {{ client.name }} is called for most, and where our diagnostics-first approach pays off.
+                </p>
+                <a href="/services/" class="cs-button-solid">Learn More About Our Services</a>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <a href="/residential-service-plumbing/" class="cs-link">
+                        <span class="cs-number">01</span>
+                        <h3 class="cs-h3">Residential Service Plumbing</h3>
+                        <p class="cs-item-text">
+                            Leaks, clogs, fixtures, and everything in between. This is the core of {{ client.name }}: fast, honest service calls handled by an expert plumber who explains what's happening and what it'll take to fix it right.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/remodels/" class="cs-link">
+                        <span class="cs-number">02</span>
+                        <h3 class="cs-h3">Remodels</h3>
+                        <p class="cs-item-text">
+                            Updating a kitchen or bathroom, or adding onto your home? We plan the plumbing side of your remodel from rough-in to fixtures, drawing on real new-construction experience.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/water-heaters/" class="cs-link">
+                        <span class="cs-number">03</span>
+                        <h3 class="cs-h3">Water Heaters</h3>
+                        <p class="cs-item-text">
+                            From a tank that's finally given out to upgrading to tankless, we size and install water heaters that match how your household actually uses hot water.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/plumbing-diagnostics/" class="cs-link">
+                        <span class="cs-number">04</span>
+                        <h3 class="cs-h3">Plumbing Diagnostics</h3>
+                        <p class="cs-item-text">
+                            Before any big decision, we run a proper diagnostic: tracing leaks, pressure issues, and recurring problems back to their source, so you're paying for a fix, not a guess.
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- ============================================ -->
+    <!--                  Full Range                  -->
+    <!-- ============================================ -->
+
+    <section id="full-range">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h3 class="cs-title">The Full Range Of<br> What We Handle</h3>
+                <p class="cs-text">
+                    Beyond our core focus, {{ client.name }} covers just about every corner of residential plumbing.
+                </p>
+            </div>
+            <ul class="cs-ul">
+                <li class="cs-li">Tankless Water Heaters</li>
+                <li class="cs-li">Repipes</li>
+                <li class="cs-li">Sump Pumps</li>
+                <li class="cs-li">Toilets</li>
+                <li class="cs-li">Gas Piping</li>
+                <li class="cs-li">Finding &amp; Repairing Leaks</li>
+                <li class="cs-li">Drain Cleaning</li>
+                <li class="cs-li">Sewage Ejector Pumps</li>
+                <li class="cs-li">Faucets</li>
+                <li class="cs-li">Boilers / Hydronics</li>
+                <li class="cs-li">Water Filtration</li>
+                <li class="cs-li">Showers</li>
+                <li class="cs-li">Garbage Disposals</li>
+            </ul>
+        </div>
+    </section>
 
 {% endblock %}

@@ -436,6 +436,17 @@
 		&.cs-open {
 			overflow: hidden;
 		}
+
+		&.scroll #cs-navigation {
+			top: 0;
+			left: 0;
+			right: 0;
+
+			.cs-container {
+				border-width: 0 0 2px 0;
+				border-radius: 0;
+			}
+		}
 	}
 
 	#cs-navigation {
@@ -448,6 +459,7 @@
 		left: calc(var(--panelInset) + 0.5rem);
 		right: calc(var(--panelInset) + 0.5rem);
 		z-index: 10000;
+		transition: top 0.3s, left 0.3s, right 0.3s;
 
 		&:before {
 			/* black blurred overlay */
@@ -495,6 +507,7 @@
 			align-items: center;
 			position: relative;
 			z-index: 1;
+			transition: border-radius 0.3s;
 		}
 
 		.cs-logo {
@@ -1019,6 +1032,18 @@
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 1024px) {
+	body.scroll #cs-navigation {
+		width: 100%;
+		max-width: 100%;
+		border-width: 0 0 2px 0;
+		border-radius: 0;
+		top: 0;
+
+		.cs-container {
+			max-width: (1232/16rem);
+		}
+	}
+
 	#cs-navigation {
 		width: calc(100% - 2 * var(--panelInset) - 2rem);
 		max-width: (1280/16rem);
@@ -1035,6 +1060,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 10000;
+		transition: top 0.3s, width 0.3s, max-width 0.3s, border-radius 0.3s;
 
 		.cs-container {
 			width: 100%;

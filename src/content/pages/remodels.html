@@ -2,58 +2,113 @@
 title: "Remodel Plumbing | Optimal Plumbing"
 description: "Kitchen and bathroom remodel plumbing from rough-in to fixtures, plus repipes and additions. Planned up front by a plumber with a new construction background."
 permalink: "/remodels/"
-layout: layouts/interior.html
-bannerTitle: "Remodels"
-bannerImage: "/assets/images/gallery-2.jpg"
-bannerAlt: "Framed sliding glass shower door over a white shower base"
-sideImage: "/assets/images/gallery-5.jpg"
-sideAlt: "Brushed nickel shower set with a fixed rain head and a handheld on a slide bar"
-parentTitle: "Services"
-parentUrl: "/services/"
 ---
 
-<h1>Remodel Plumbing</h1>
-<p>A remodel is the best chance you'll get to fix what's behind the walls. Once the drywall is open and the floor is up, the plumbing is right there: old supply lines, tired drains, valves nobody has turned in twenty years. {{ client.name }} plans and installs remodel plumbing so the finished room works as well as it looks, and keeps working long after the paint dries.</p>
+{% extends "layouts/base.html" %}
 
-<h2>Built on a New Construction Background</h2>
-<p>Our founder came up through new construction, remodeling, and service plumbing. That mix matters on a remodel. New construction teaches you how a plumbing system should be laid out from scratch. Remodeling teaches you how to work around what's already there. Service plumbing teaches you what fails years later, and why. We bring all three to your project.</p>
+{% block head %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+{% endblock %}
 
-<h2>Kitchen Remodels</h2>
-<p>Kitchens pack a lot of plumbing into a small space. A new layout can mean moving the sink, adding an island prep sink, running a line for a refrigerator or pot filler, or adding gas for a new range. We handle:</p>
-<ul>
-<li>Relocating sink drains and supply lines to match a new layout</li>
-<li>Dishwasher, refrigerator, and ice maker connections</li>
-<li>Garbage disposal installation</li>
-<li>Gas piping for ranges and cooktops</li>
-<li>Faucets, including pull-down and pot filler models</li>
-<li>Water filtration at the kitchen sink</li>
-</ul>
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
 
-<h2>Bathroom Remodels</h2>
-<p>A bathroom remodel lives or dies on the plumbing behind the tile. A shower valve set at the wrong depth or a drain without proper slope is expensive to fix once the finish work is done. We take care of:</p>
-<ul>
-<li>Shower and tub valves, including custom shower layouts</li>
-<li>Drain relocation for new tub, shower, and vanity positions</li>
-<li>Toilet relocation and new toilet installation</li>
-<li>Vanity and sink rough-in and faucet installation</li>
-<li>Converting a tub to a walk-in shower</li>
-</ul>
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Remodels</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/services/" class="cs-link">Services</a>
+                <a href="/remodels/" class="cs-link cs-active" aria-current="page">Remodels</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Framed sliding glass shower door over a white shower base" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
-<h2>Additions and Basement Finishes</h2>
-<p>Adding a bathroom, a laundry room, or a wet bar means tying new lines into your existing system. We plan the drain, waste, and vent layout, size the supply lines, and make sure the new fixtures have the pressure and flow they need. If a new bathroom sits below the main sewer line, a sewage ejector pump may be part of the plan, and we can install that too.</p>
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
 
-<h2>From Rough-In to Fixtures</h2>
-<p>Remodel plumbing happens in two main stages. <strong>Rough-in</strong> is everything that goes inside the walls and floors before they're closed: drains, vents, supply lines, valves, and gas piping. <strong>Finish</strong> is setting fixtures once the walls, tile, and cabinets are in: toilets, faucets, shower trim, and appliance connections. We handle both, so the person who planned the pipes is the one who connects the fixtures.</p>
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>Remodel Plumbing</h1>
+                <p>A remodel is the best chance you'll get to fix what's behind the walls. Once the drywall is open and the floor is up, the plumbing is right there: old supply lines, tired drains, valves nobody has turned in twenty years. {{ client.name }} plans and installs remodel plumbing so the finished room works as well as it looks, and keeps working long after the paint dries.</p>
 
-<h2>Repipes</h2>
-<p>If your home still has aging galvanized steel or other piping near the end of its life, a remodel is the right time to think about a repipe. With the walls already open, replacing old supply lines costs less and disrupts less than doing it later as a separate job. Signs your pipes may be due include low pressure throughout the house, discolored water, frequent pinhole leaks, and visible corrosion at fittings. We'll look at what you have and give you an honest read on whether a full repipe, a partial one, or no repipe at all makes sense.</p>
+                <h2>Built on a New Construction Background</h2>
+                <p>Our founder came up through new construction, remodeling, and service plumbing. That mix matters on a remodel. New construction teaches you how a plumbing system should be laid out from scratch. Remodeling teaches you how to work around what's already there. Service plumbing teaches you what fails years later, and why. We bring all three to your project.</p>
 
-<h2>Working With You or Your Contractor</h2>
-<p>Some homeowners run their own remodel and hire each trade directly. Others have a general contractor managing the project. We work either way. If you're running the job, we'll help you sequence the plumbing so it lines up with demolition, framing, and finish work. If you have a contractor, we'll coordinate with them on scheduling and layout so the plumbing isn't the thing holding up the tile setter.</p>
+                <h2>Kitchen Remodels</h2>
+                <p>Kitchens pack a lot of plumbing into a small space. A new layout can mean moving the sink, adding an island prep sink, running a line for a refrigerator or pot filler, or adding gas for a new range. We handle:</p>
+                <ul>
+                <li>Relocating sink drains and supply lines to match a new layout</li>
+                <li>Dishwasher, refrigerator, and ice maker connections</li>
+                <li>Garbage disposal installation</li>
+                <li>Gas piping for ranges and cooktops</li>
+                <li>Faucets, including pull-down and pot filler models</li>
+                <li>Water filtration at the kitchen sink</li>
+                </ul>
 
-<h2>Planning Comes First</h2>
-<p>Thorough plumbing starts before anything gets cut. We walk the space with you, listen to what you want the finished room to do, look at the existing plumbing, and talk through the options. Sometimes the layout you have in mind works as drawn. Sometimes a small change saves real money. Either way, you'll know the plan before work starts, and the decision is always yours.</p>
-<p>Looking for smaller repairs instead? See our <a href="/residential-service-plumbing/">residential service plumbing</a> page, or browse all of our <a href="/services/">plumbing services</a>.</p>
+                <h2>Bathroom Remodels</h2>
+                <p>A bathroom remodel lives or dies on the plumbing behind the tile. A shower valve set at the wrong depth or a drain without proper slope is expensive to fix once the finish work is done. We take care of:</p>
+                <ul>
+                <li>Shower and tub valves, including custom shower layouts</li>
+                <li>Drain relocation for new tub, shower, and vanity positions</li>
+                <li>Toilet relocation and new toilet installation</li>
+                <li>Vanity and sink rough-in and faucet installation</li>
+                <li>Converting a tub to a walk-in shower</li>
+                </ul>
 
-<h2>Talk to Us About Your Remodel</h2>
-<p>Whether you're redoing one bathroom or opening up the whole kitchen, call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">tell us about your project</a>. We'll help you plan plumbing that's done once and done well.</p>
+                <h2>Additions and Basement Finishes</h2>
+                <p>Adding a bathroom, a laundry room, or a wet bar means tying new lines into your existing system. We plan the drain, waste, and vent layout, size the supply lines, and make sure the new fixtures have the pressure and flow they need. If a new bathroom sits below the main sewer line, a sewage ejector pump may be part of the plan, and we can install that too.</p>
+
+                <h2>From Rough-In to Fixtures</h2>
+                <p>Remodel plumbing happens in two main stages. <strong>Rough-in</strong> is everything that goes inside the walls and floors before they're closed: drains, vents, supply lines, valves, and gas piping. <strong>Finish</strong> is setting fixtures once the walls, tile, and cabinets are in: toilets, faucets, shower trim, and appliance connections. We handle both, so the person who planned the pipes is the one who connects the fixtures.</p>
+
+                <h2>Repipes</h2>
+                <p>If your home still has aging galvanized steel or other piping near the end of its life, a remodel is the right time to think about a repipe. With the walls already open, replacing old supply lines costs less and disrupts less than doing it later as a separate job. Signs your pipes may be due include low pressure throughout the house, discolored water, frequent pinhole leaks, and visible corrosion at fittings. We'll look at what you have and give you an honest read on whether a full repipe, a partial one, or no repipe at all makes sense.</p>
+
+                <h2>Working With You or Your Contractor</h2>
+                <p>Some homeowners run their own remodel and hire each trade directly. Others have a general contractor managing the project. We work either way. If you're running the job, we'll help you sequence the plumbing so it lines up with demolition, framing, and finish work. If you have a contractor, we'll coordinate with them on scheduling and layout so the plumbing isn't the thing holding up the tile setter.</p>
+
+                <h2>Planning Comes First</h2>
+                <p>Thorough plumbing starts before anything gets cut. We walk the space with you, listen to what you want the finished room to do, look at the existing plumbing, and talk through the options. Sometimes the layout you have in mind works as drawn. Sometimes a small change saves real money. Either way, you'll know the plan before work starts, and the decision is always yours.</p>
+                <p>Looking for smaller repairs instead? See our <a href="/residential-service-plumbing/">residential service plumbing</a> page, or browse all of our <a href="/services/">plumbing services</a>.</p>
+
+                <h2>Talk to Us About Your Remodel</h2>
+                <p>Whether you're redoing one bathroom or opening up the whole kitchen, call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">tell us about your project</a>. We'll help you plan plumbing that's done once and done well.</p>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Brushed nickel shower set with a fixed rain head and a handheld on a slide bar" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

@@ -2,47 +2,140 @@
 title: "About Us | Optimal Plumbing"
 description: "Optimal Plumbing aims to be your trusted plumber for life: thorough diagnostics, clear communication, and a big-business warranty at small-business prices."
 permalink: "/about/"
-layout: layouts/interior.html
-bannerTitle: "About Us"
-bannerImage: "/assets/images/why-choose-bg.jpg"
-bannerAlt: "Tankless water heater with its cover off above copper piping and circulator pumps"
-sideImage: "/assets/images/about-owner.jpg"
-sideAlt: "The founder of Optimal Plumbing smiling outdoors in a cap and blue polo shirt"
-loadLocal: true
-afterSections:
-  - "sections/why-choose.html"
-  - "sections/reviews.html"
 ---
 
-<h1>About Optimal Plumbing</h1>
-<p>When {{ client.name }} knocks on your door, our goal is to become your trusted plumber for life. We aim to earn your trust through our communication, our pricing, and our plumbing expertise and skills. When we're done, we hope you don't need a plumber again for a long time. But if you do, we want to be the trusted plumber you call next time.</p>
+{% extends "layouts/base.html" %}
 
-<h2>Our Approach</h2>
-<p>When you call {{ client.name }}, you get an expert plumber at your door. Our job is to evaluate your plumbing as well as your needs, and to educate you on the options for how we proceed.</p>
-<p>Many plumbing projects, large and small, have several options. Sometimes a minimal repair is all you're looking for to get your running water back. Other times, you're ready to make an investment in worry-free plumbing with an Optimal system.</p>
-<p>At the end of the day, it's your house, your budget, and your decision. You will never feel pressured with {{ client.name }}. Your home is your castle and your largest investment, and we respect that.</p>
+{% block head %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+    <link rel="stylesheet" href="/assets/css/about.css">
+{% endblock %}
 
-<h2>Experience Across the Trade</h2>
-<p>Our founder brings a background in new construction, remodeling, and service plumbing. New construction means knowing how a plumbing system should be laid out from the ground up. Remodeling means knowing how to work with what's already behind your walls. Service plumbing means knowing what fails over time and how to fix it so it stays fixed. Together, that adds up to a wide skill set for just about any plumbing need in your home, from a <a href="/water-heaters/">water heater</a> replacement to a full <a href="/remodels/">remodel</a>.</p>
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
 
-<h2>What Sets Us Apart</h2>
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">About Us</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/about/" class="cs-link cs-active" aria-current="page">About Us</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Tankless water heater with its cover off above copper piping and circulator pumps" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
-<h3>Thorough Plumbing</h3>
-<p>We put more rigor into <a href="/plumbing-diagnostics/">diagnostics</a> and planning up front. That means a solid plan before work starts and a repair built to last, not a quick patch that brings us back next month. A fix, not a guess.</p>
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
 
-<h3>Communication</h3>
-<p>We listen carefully to what you need and what you want. You'll know what we found, what your options are, and what each one means for your home, explained in plain language.</p>
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>About Optimal Plumbing</h1>
+                <p>When {{ client.name }} knocks on your door, our goal is to become your trusted plumber for life. We aim to earn your trust through our communication, our pricing, and our plumbing expertise and skills. When we're done, we hope you don't need a plumber again for a long time. But if you do, we want to be the trusted plumber you call next time.</p>
 
-<h3>Warranty and Value</h3>
-<p>You get the warranty of a big business at small-business prices. We'll go over the coverage for your specific job before any work begins, so you know exactly where you stand.</p>
+                <h2>Our Approach</h2>
+                <p>When you call {{ client.name }}, you get an expert plumber at your door. Our job is to evaluate your plumbing as well as your needs, and to educate you on the options for how we proceed.</p>
+                <p>Many plumbing projects, large and small, have several options. Sometimes a minimal repair is all you're looking for to get your running water back. Other times, you're ready to make an investment in worry-free plumbing with an Optimal system.</p>
+                <p>At the end of the day, it's your house, your budget, and your decision. You will never feel pressured with {{ client.name }}. Your home is your castle and your largest investment, and we respect that.</p>
 
-<h2>What You Can Expect</h2>
-<ul>
-<li>An expert plumber who takes the time to understand the problem</li>
-<li>Honest options, from minimal repair to full upgrade</li>
-<li>No pressure, ever</li>
-<li>Work that's done once and done well</li>
-</ul>
+                <h2>Experience Across the Trade</h2>
+                <p>Our founder brings a background in new construction, remodeling, and service plumbing. New construction means knowing how a plumbing system should be laid out from the ground up. Remodeling means knowing how to work with what's already behind your walls. Service plumbing means knowing what fails over time and how to fix it so it stays fixed. Together, that adds up to a wide skill set for just about any plumbing need in your home, from a <a href="/water-heaters/">water heater</a> replacement to a full <a href="/remodels/">remodel</a>.</p>
 
-<h2>Let's Get Started</h2>
-<p>Ready to meet the plumber you'll trust for life? Call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">send us a message</a>. You can also browse our <a href="/services/">services</a> or read our <a href="/faq/">frequently asked questions</a>.</p>
+                <h2>What Sets Us Apart</h2>
+
+                <h3>Thorough Plumbing</h3>
+                <p>We put more rigor into <a href="/plumbing-diagnostics/">diagnostics</a> and planning up front. That means a solid plan before work starts and a repair built to last, not a quick patch that brings us back next month. A fix, not a guess.</p>
+
+                <h3>Communication</h3>
+                <p>We listen carefully to what you need and what you want. You'll know what we found, what your options are, and what each one means for your home, explained in plain language.</p>
+
+                <h3>Warranty and Value</h3>
+                <p>You get the warranty of a big business at small-business prices. We'll go over the coverage for your specific job before any work begins, so you know exactly where you stand.</p>
+
+                <h2>What You Can Expect</h2>
+                <ul>
+                <li>An expert plumber who takes the time to understand the problem</li>
+                <li>Honest options, from minimal repair to full upgrade</li>
+                <li>No pressure, ever</li>
+                <li>Work that's done once and done well</li>
+                </ul>
+
+                <h2>Let's Get Started</h2>
+                <p>Ready to meet the plumber you'll trust for life? Call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">send us a message</a>. You can also browse our <a href="/services/">services</a> or read our <a href="/faq/">frequently asked questions</a>.</p>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/about-owner.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="The founder of Optimal Plumbing smiling outdoors in a cap and blue polo shirt" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <!-- ============================================ -->
+    <!--                 Why Choose Us                -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-262">
+        <div class="cs-container">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-topper">Thorough Plumbing</span>
+                    <h3 class="cs-h3">Real Diagnostics,<br> Not Guesswork</h3>
+                    <p class="cs-item-text">
+                        We do more rigorous diagnostics and planning up front, so every repair is part of a solid, long-term plan, not a temporary fix.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-topper">Communication</span>
+                    <h3 class="cs-h3">We Listen Before<br> We Work</h3>
+                    <p class="cs-item-text">
+                        We take the time to understand what you actually need and want, then explain your options in plain language before touching a pipe.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-topper">Warranty &amp; Value</span>
+                    <h3 class="cs-h3"><span class="cs-nowrap">Big-business</span> Backing,<br> <span class="cs-nowrap">Small-business</span> Pricing</h3>
+                    <p class="cs-item-text">
+                        You get the protection and confidence of a large company's warranty, at prices that make sense for your home.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 2310, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 1216, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 1281, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 1281, position: "attention" }) | jpeg %}" alt="Tankless water heater with its cover off, mounted above copper piping and three circulator pumps" width="1920" height="984" loading="lazy" decoding="async">
+        </picture>
+    </section>
+{% endblock %}

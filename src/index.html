@@ -8,7 +8,9 @@ tags: "sitemap"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 640, height: 1000 }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 608, height: 1290, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 1980, height: 1408, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/hero.jpg" | resize({ width: 2500, height: 1379, position: "attention" }) | avif %}">
     <link rel="stylesheet" href="/assets/css/critical.css"/>
     <script defer src="/assets/js/faq.js"></script>
 
@@ -96,10 +98,268 @@ tags: "sitemap"
             </div>
         </div>
     </section>
-    {% include "sections/why-choose.html" %}
-    {% include "sections/services.html" %}
-    {% include "sections/full-range.html" %}
-    {% include "sections/reviews.html" %}
-    {% set faqLimit = 6 %}
-    {% include "sections/faq.html" %}
+    <!-- ============================================ -->
+    <!--                 Why Choose Us                -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-262">
+        <div class="cs-container">
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-topper">Thorough Plumbing</span>
+                    <h3 class="cs-h3">Real Diagnostics,<br> Not Guesswork</h3>
+                    <p class="cs-item-text">
+                        We do more rigorous diagnostics and planning up front, so every repair is part of a solid, long-term plan, not a temporary fix.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-topper">Communication</span>
+                    <h3 class="cs-h3">We Listen Before<br> We Work</h3>
+                    <p class="cs-item-text">
+                        We take the time to understand what you actually need and want, then explain your options in plain language before touching a pipe.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-topper">Warranty &amp; Value</span>
+                    <h3 class="cs-h3"><span class="cs-nowrap">Big-business</span> Backing,<br> <span class="cs-nowrap">Small-business</span> Pricing</h3>
+                    <p class="cs-item-text">
+                        You get the protection and confidence of a large company's warranty, at prices that make sense for your home.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 2310, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 1216, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 1281, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 1281, position: "attention" }) | jpeg %}" alt="Tankless water heater with its cover off, mounted above copper piping and three circulator pumps" width="1920" height="984" loading="lazy" decoding="async">
+        </picture>
+    </section>
+    <!-- ============================================ -->
+    <!--                   Services                   -->
+    <!-- ============================================ -->
+
+    <section id="services-2527">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Where We Focus</span>
+                <h2 class="cs-title">The Services We're Built Around</h2>
+                <p class="cs-text">
+                    From everyday residential repairs to full remodels, these are the jobs {{ client.name }} is called for most, and where our diagnostics-first approach pays off.
+                </p>
+                <a href="/services/" class="cs-button-solid">Learn More About Our Services</a>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <a href="/residential-service-plumbing/" class="cs-link">
+                        <span class="cs-number">01</span>
+                        <h3 class="cs-h3">Residential Service Plumbing</h3>
+                        <p class="cs-item-text">
+                            Leaks, clogs, fixtures, and everything in between. This is the core of {{ client.name }}: fast, honest service calls handled by an expert plumber who explains what's happening and what it'll take to fix it right.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/remodels/" class="cs-link">
+                        <span class="cs-number">02</span>
+                        <h3 class="cs-h3">Remodels</h3>
+                        <p class="cs-item-text">
+                            Updating a kitchen or bathroom, or adding onto your home? We plan the plumbing side of your remodel from rough-in to fixtures, drawing on real new-construction experience.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/water-heaters/" class="cs-link">
+                        <span class="cs-number">03</span>
+                        <h3 class="cs-h3">Water Heaters</h3>
+                        <p class="cs-item-text">
+                            From a tank that's finally given out to upgrading to tankless, we size and install water heaters that match how your household actually uses hot water.
+                        </p>
+                    </a>
+                </li>
+                <li class="cs-item">
+                    <a href="/plumbing-diagnostics/" class="cs-link">
+                        <span class="cs-number">04</span>
+                        <h3 class="cs-h3">Plumbing Diagnostics</h3>
+                        <p class="cs-item-text">
+                            Before any big decision, we run a proper diagnostic: tracing leaks, pressure issues, and recurring problems back to their source, so you're paying for a fix, not a guess.
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- ============================================ -->
+    <!--                  Full Range                  -->
+    <!-- ============================================ -->
+
+    <section id="full-range">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h3 class="cs-title">The Full Range Of<br> What We Handle</h3>
+                <p class="cs-text">
+                    Beyond our core focus, {{ client.name }} covers just about every corner of residential plumbing.
+                </p>
+            </div>
+            <ul class="cs-ul">
+                <li class="cs-li">Tankless Water Heaters</li>
+                <li class="cs-li">Repipes</li>
+                <li class="cs-li">Sump Pumps</li>
+                <li class="cs-li">Toilets</li>
+                <li class="cs-li">Gas Piping</li>
+                <li class="cs-li">Finding &amp; Repairing Leaks</li>
+                <li class="cs-li">Drain Cleaning</li>
+                <li class="cs-li">Sewage Ejector Pumps</li>
+                <li class="cs-li">Faucets</li>
+                <li class="cs-li">Boilers / Hydronics</li>
+                <li class="cs-li">Water Filtration</li>
+                <li class="cs-li">Showers</li>
+                <li class="cs-li">Garbage Disposals</li>
+            </ul>
+        </div>
+    </section>
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-1741">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions</span>
+                <h2 class="cs-title">Answers Before You Call</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item active" id="pressure">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="true" aria-controls="pressure-answer" id="pressure-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Will I be pressured into a bigger repair than I need?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="pressure-answer" role="region" aria-labelledby="pressure-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">No. We'll walk you through your options, from a minimal repair to a full system upgrade, and leave the decision to you. It's your house, your budget, and your call. Some homeowners just want their running water back today. Others are ready to invest in a long-term fix. Either way, you'll get honest information and no sales pressure.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="different">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="different-answer" id="different-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What makes Optimal Plumbing different?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="different-answer" role="region" aria-labelledby="different-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Three things. Thorough plumbing: we put more rigor into diagnostics and planning up front, so you get a solid plan and a repair that lasts. Communication: we listen carefully to what you need and want. Warranty and value: you get the warranty of a big business at small-business prices. Our goal is to be your trusted plumber for life.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="warranty">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="warranty-answer" id="warranty-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Do you offer a warranty on your work?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="warranty-answer" role="region" aria-labelledby="warranty-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Yes. Our work is backed by a warranty, and our goal is to give you the warranty of a big business at small-business prices. Coverage can vary with the type of job, so we'll go over exactly what's covered for your specific project before any work starts. No surprises after the fact.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="services">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="services-answer" id="services-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">What services do you provide?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="services-answer" role="region" aria-labelledby="services-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Our main services are residential service plumbing, remodels, and water heaters, including tankless. We also handle plumbing diagnostics, finding and repairing leaks, boilers and hydronics, repipes, drain cleaning, water filtration, sump pumps, sewage ejector pumps, showers, toilets, faucets, garbage disposals, and gas piping. If it's plumbing in your home, ask us.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="remodels">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="remodels-answer" id="remodels-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">Are you experienced with remodels and new construction?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="remodels-answer" role="region" aria-labelledby="remodels-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Yes. Our founder has a background in new construction, remodeling, and service plumbing. That means we know how a system should be laid out from scratch, how to work with the plumbing already in your walls, and what tends to fail years later. We handle remodel plumbing from rough-in through final fixtures.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cs-faq-item" id="schedule">
+                        <h3 class="cs-question">
+                            <button class="cs-button" type="button" aria-expanded="false" aria-controls="schedule-answer" id="schedule-button">
+                                <span class="cs-icon" aria-hidden="true"></span>
+                                <span class="cs-button-text">How do I schedule a service call?</span>
+                            </button>
+                        </h3>
+                        <div class="cs-answer" id="schedule-answer" role="region" aria-labelledby="schedule-button">
+                            <div class="cs-answer-inner">
+                                <p class="cs-item-text">Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> or use our <a href="/contact/">contact page</a> to send a message with a short description of the problem. We'll get back to you to find a time that works. If you're not sure what's wrong, that's fine. Tell us what you're seeing and hearing, and we'll take it from there.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="cs-gallery">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 608, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | jpeg %}" alt="Navien tankless water heater installed in a closet with new copper and gas lines" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 608, height: 600, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-2.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Framed sliding glass shower door over a white shower base" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 608, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 1980, height: 1372, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 779, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-3.jpg" | resize({ width: 2500, height: 779, position: "attention" }) | jpeg %}" alt="White walk-in shower with a folding teak seat, grab bar, recessed niche and handheld shower on a slide bar" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 608, height: 648, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 2500, height: 741, position: "attention" }) | jpeg %}" alt="Wall-mounted tankless water heater with copper supply lines in an unfinished utility room" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/gallery-5.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Brushed nickel shower set with a fixed rain head and a handheld on a slide bar against white wall panels" width="328" height="400" loading="lazy" decoding="async">
+            </picture>
+        </div>
+    </section>
 {% endblock %}

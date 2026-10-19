@@ -2,54 +2,110 @@
 title: "Plumbing Maintenance Tips | Optimal Plumbing"
 description: "Seasonal plumbing maintenance for homeowners: flush your water heater, test the sump pump, find your main shutoff, and protect outdoor faucets from freezing."
 permalink: "/maintenance-tips/"
-layout: layouts/interior.html
-bannerTitle: "Maintenance Tips"
-bannerImage: "/assets/images/reviews.jpg"
-bannerAlt: "Water heater being drained into a storm drain"
-sideImage: "/assets/images/gallery-4.jpg"
-sideAlt: "Wall-mounted tankless water heater with copper supply lines in a utility room"
 ---
 
-<h1>Plumbing Maintenance Tips</h1>
-<p>Most plumbing failures don't come out of nowhere. They build up slowly: sediment in a water heater, a sump pump that sat idle all summer, a valve that seized from years of not being touched. A few minutes of attention each season can head off a lot of expensive surprises. Here are the habits {{ client.name }} recommends to every homeowner.</p>
+{% extends "layouts/base.html" %}
 
-<h2>Know Where Your Main Shutoff Valve Is</h2>
-<p>If a pipe bursts, the first thing you need to do is stop the water. Every member of the household should know where the main shutoff valve is and how to close it. It's often in a basement, a crawlspace, a garage, or near where the water line enters the house.</p>
-<p>Find yours now, not during an emergency. Make sure it's easy to reach and not buried behind storage boxes. If it's a gate valve with a round handle that's hard to turn, or it doesn't fully stop the water, have it replaced before you need it.</p>
+{% block head %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+{% endblock %}
 
-<h2>Exercise Your Valves</h2>
-<p>Valves that sit untouched for years can seize open or start leaking the first time someone finally turns them. Once or twice a year, gently close and reopen the shutoff valves under sinks, behind toilets, and at the water heater. If a valve won't turn, drips at the stem after you move it, or doesn't stop the flow, it's due for replacement.</p>
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
 
-<h2>Flush Your Water Heater</h2>
-<p>Minerals in your water settle to the bottom of a tank water heater over time. That sediment makes the heater work harder, can cause popping or rumbling sounds, and reduces how much hot water you have. Draining a few gallons from the tank helps clear it out. Many homeowners do this once a year.</p>
-<p>While you're there, check the area around the base for moisture and test the temperature and pressure relief valve according to the manufacturer's instructions. Tankless water heaters need a different kind of care: periodic descaling of the heat exchanger. If you're not comfortable doing either, we can take care of it. Learn more on our <a href="/water-heaters/">water heaters</a> page.</p>
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Maintenance Tips</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/maintenance-tips/" class="cs-link cs-active" aria-current="page">Maintenance Tips</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/reviews.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Water heater being drained into a storm drain" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
-<h2>Test Your Sump Pump</h2>
-<p>A sump pump can sit idle for months and then need to work hard during the first heavy rain. Test it before the wet season. Slowly pour a bucket of water into the sump pit until the float rises. The pump should kick on, empty the pit, and shut off on its own. Also check that the discharge line outside is clear and pointed away from the foundation.</p>
-<p>If your home has a sewage ejector pump for a basement bathroom or laundry, listen for unusual noises, frequent cycling, or odors, and call a plumber if anything changes.</p>
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
 
-<h2>Be Careful With the Garbage Disposal</h2>
-<p>A garbage disposal handles small food scraps, not everything on the plate. Keep these out of it:</p>
-<ul>
-<li>Grease, oil, and fat, which harden in the pipes</li>
-<li>Coffee grounds and eggshells, which build up into a sludge</li>
-<li>Pasta, rice, and bread, which swell with water</li>
-<li>Fibrous foods like celery, corn husks, and onion skins, which wrap around the blades</li>
-<li>Bones, fruit pits, and anything that isn't food</li>
-</ul>
-<p>Run cold water before, during, and after using the disposal, and let it run a few seconds after the grinding stops to flush the line.</p>
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>Plumbing Maintenance Tips</h1>
+                <p>Most plumbing failures don't come out of nowhere. They build up slowly: sediment in a water heater, a sump pump that sat idle all summer, a valve that seized from years of not being touched. A few minutes of attention each season can head off a lot of expensive surprises. Here are the habits {{ client.name }} recommends to every homeowner.</p>
 
-<h2>Watch Your Water Bill</h2>
-<p>Your water bill is one of the best leak detectors you have. If it jumps without a change in how your household uses water, something may be leaking. To check, turn off every faucet and water-using appliance, then look at your water meter. If it's still moving, water is going somewhere. A toilet that runs silently can waste a surprising amount, so check those first. If you can't find the source, our <a href="/plumbing-diagnostics/">plumbing diagnostics</a> service can track it down.</p>
+                <h2>Know Where Your Main Shutoff Valve Is</h2>
+                <p>If a pipe bursts, the first thing you need to do is stop the water. Every member of the household should know where the main shutoff valve is and how to close it. It's often in a basement, a crawlspace, a garage, or near where the water line enters the house.</p>
+                <p>Find yours now, not during an emergency. Make sure it's easy to reach and not buried behind storage boxes. If it's a gate valve with a round handle that's hard to turn, or it doesn't fully stop the water, have it replaced before you need it.</p>
 
-<h2>Protect Hose Bibs in Cold Weather</h2>
-<p>Outdoor faucets are one of the most common places for pipes to freeze. Before the first hard freeze:</p>
-<ul>
-<li>Disconnect and drain garden hoses. A hose left attached traps water in the faucet.</li>
-<li>If you have an interior shutoff for the outdoor faucet, close it and open the outside faucet to drain the line.</li>
-<li>Consider insulated faucet covers for extra protection.</li>
-</ul>
-<p>A frozen hose bib can split inside the wall, and you may not notice until you turn it on in spring and water runs into the house.</p>
+                <h2>Exercise Your Valves</h2>
+                <p>Valves that sit untouched for years can seize open or start leaking the first time someone finally turns them. Once or twice a year, gently close and reopen the shutoff valves under sinks, behind toilets, and at the water heater. If a valve won't turn, drips at the stem after you move it, or doesn't stop the flow, it's due for replacement.</p>
 
-<h2>Need a Hand?</h2>
-<p>Some maintenance is easy to do yourself. Some is better left to a plumber. If you'd like us to flush your water heater, test your sump pump, replace a stubborn valve, or look over your system, call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">request service online</a>.</p>
+                <h2>Flush Your Water Heater</h2>
+                <p>Minerals in your water settle to the bottom of a tank water heater over time. That sediment makes the heater work harder, can cause popping or rumbling sounds, and reduces how much hot water you have. Draining a few gallons from the tank helps clear it out. Many homeowners do this once a year.</p>
+                <p>While you're there, check the area around the base for moisture and test the temperature and pressure relief valve according to the manufacturer's instructions. Tankless water heaters need a different kind of care: periodic descaling of the heat exchanger. If you're not comfortable doing either, we can take care of it. Learn more on our <a href="/water-heaters/">water heaters</a> page.</p>
+
+                <h2>Test Your Sump Pump</h2>
+                <p>A sump pump can sit idle for months and then need to work hard during the first heavy rain. Test it before the wet season. Slowly pour a bucket of water into the sump pit until the float rises. The pump should kick on, empty the pit, and shut off on its own. Also check that the discharge line outside is clear and pointed away from the foundation.</p>
+                <p>If your home has a sewage ejector pump for a basement bathroom or laundry, listen for unusual noises, frequent cycling, or odors, and call a plumber if anything changes.</p>
+
+                <h2>Be Careful With the Garbage Disposal</h2>
+                <p>A garbage disposal handles small food scraps, not everything on the plate. Keep these out of it:</p>
+                <ul>
+                <li>Grease, oil, and fat, which harden in the pipes</li>
+                <li>Coffee grounds and eggshells, which build up into a sludge</li>
+                <li>Pasta, rice, and bread, which swell with water</li>
+                <li>Fibrous foods like celery, corn husks, and onion skins, which wrap around the blades</li>
+                <li>Bones, fruit pits, and anything that isn't food</li>
+                </ul>
+                <p>Run cold water before, during, and after using the disposal, and let it run a few seconds after the grinding stops to flush the line.</p>
+
+                <h2>Watch Your Water Bill</h2>
+                <p>Your water bill is one of the best leak detectors you have. If it jumps without a change in how your household uses water, something may be leaking. To check, turn off every faucet and water-using appliance, then look at your water meter. If it's still moving, water is going somewhere. A toilet that runs silently can waste a surprising amount, so check those first. If you can't find the source, our <a href="/plumbing-diagnostics/">plumbing diagnostics</a> service can track it down.</p>
+
+                <h2>Protect Hose Bibs in Cold Weather</h2>
+                <p>Outdoor faucets are one of the most common places for pipes to freeze. Before the first hard freeze:</p>
+                <ul>
+                <li>Disconnect and drain garden hoses. A hose left attached traps water in the faucet.</li>
+                <li>If you have an interior shutoff for the outdoor faucet, close it and open the outside faucet to drain the line.</li>
+                <li>Consider insulated faucet covers for extra protection.</li>
+                </ul>
+                <p>A frozen hose bib can split inside the wall, and you may not notice until you turn it on in spring and water runs into the house.</p>
+
+                <h2>Need a Hand?</h2>
+                <p>Some maintenance is easy to do yourself. Some is better left to a plumber. If you'd like us to flush your water heater, test your sump pump, replace a stubborn valve, or look over your system, call {{ client.name }} at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, reach us at <a href="mailto:{{ client.email }}">Click To Email</a>, or <a href="/contact/">request service online</a>.</p>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/gallery-4.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Wall-mounted tankless water heater with copper supply lines in a utility room" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

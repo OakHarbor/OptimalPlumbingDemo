@@ -2,21 +2,41 @@
 title: "Contact Us | Optimal Plumbing"
 description: "Schedule a service call with Optimal Plumbing. Call, email, or send a message about leaks, clogs, water heaters, remodels, or a problem you can't pin down."
 permalink: "/contact/"
-bannerTitle: "Contact Us"
-bannerImage: "/assets/images/about-detail.jpg"
-bannerAlt: "Copper piping with an expansion tank, circulator pump and pressure gauge on a utility room wall"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <link rel="preload" as="image" href="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 640, height: 600 }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
     <link rel="stylesheet" href="/assets/css/contact.css">
 {% endblock %}
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Contact Us</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/contact/" class="cs-link cs-active" aria-current="page">Contact Us</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/about-detail.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Copper piping with an expansion tank, circulator pump and pressure gauge on a utility room wall" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
     <!-- ============================================ -->
     <!--                Contact Form                  -->

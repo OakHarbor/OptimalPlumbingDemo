@@ -1,0 +1,161 @@
+/*-- -------------------------- -->
+<---        Why Choose Us       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-262 {
+        /* 240px - 565px top, 60px - 100px bottom */
+        padding: clamp(15rem, 29.4vw, 35.3125rem) 1rem clamp(3.75rem, 5.21vw, 6.25rem);
+        margin: 0 var(--panelInset);
+        background-color: var(--panel);
+        border-radius: var(--panelRadius) var(--panelRadius) 0 0;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .cs-item {
+            list-style: none;
+            /* 28px - 36px top, 0px - 24px sides */
+            padding: clamp(1.75rem, 1.9vw, 2.25rem) clamp(0rem, 1.25vw, 1.5rem) (32/16rem);
+            border-top: 4px solid var(--lineLight);
+
+            &:last-of-type {
+                padding-bottom: 0;
+            }
+        }
+
+        .cs-topper {
+            margin-bottom: (20/16rem);
+            color: #fff;
+        }
+
+        .cs-h3 {
+            /* 25px - 33px */
+            font-size: clamp(1.5625rem, 1.72vw, 2.0625rem);
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.2em;
+            margin: 0 0 (20/16rem);
+            color: #fff;
+        }
+
+        .cs-nowrap {
+            white-space: nowrap;
+        }
+
+        .cs-item-text {
+            /* 16px - 18px */
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            font-weight: 500;
+            line-height: 1.5em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            border-radius: var(--panelRadius);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 12%, #171717 42%);
+                mix-blend-mode: multiply;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 52%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-choose-262 {
+        .cs-card-group {
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 4px solid var(--lineLight);
+        }
+
+        .cs-item {
+            padding-bottom: 0;
+            border-top: none;
+        }
+
+        .cs-background {
+            &:before {
+                background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 33.684%, #171717 77.895%);
+            }
+        }
+    }
+}
+
+/* Tablet only - 768px to 1023px */
+@media only screen and (min-width: 48rem) and (max-width: 63.9375rem) {
+    #why-choose-262 {
+        padding-top: (320/16rem);
+
+        .cs-h3 {
+            font-size: (22/16rem);
+        }
+
+        .cs-item-text {
+            font-size: (15/16rem);
+        }
+
+        .cs-background {
+            &:before {
+                background: linear-gradient(to bottom, rgba(23, 23, 23, 0) 10%, #171717 45%);
+            }
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #why-choose-262 {
+            background-color: var(--medium);
+
+            .cs-topper,
+            .cs-h3,
+            .cs-item-text {
+                color: #fff;
+            }
+        }
+    }
+}

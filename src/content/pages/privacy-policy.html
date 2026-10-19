@@ -2,57 +2,113 @@
 title: "Privacy Policy | Optimal Plumbing"
 description: "What the Optimal Plumbing website collects through its contact form and hosting logs, how that information is used, and how to ask us to update or delete it."
 permalink: "/privacy-policy/"
-layout: layouts/interior.html
-bannerTitle: "Privacy Policy"
-bannerImage: "/assets/images/why-choose-bg.jpg"
-bannerAlt: "Copper piping and circulator pumps below a tankless water heater"
-sideImage: "/assets/images/gallery-1.jpg"
-sideAlt: "Tankless water heater installed in a closet with new copper and gas lines"
 ---
 
-<h1>Privacy Policy</h1>
-<p>This policy explains what information {{ client.legalName }}, doing business as {{ client.name }} ("we," "us," or "our"), collects through this website and how we use it. We keep it simple: we collect only what we need to respond to you, and we don't sell your information.</p>
+{% extends "layouts/base.html" %}
 
-<h2>Information You Give Us</h2>
-<p>When you fill out our contact form, we collect the information you choose to provide. That typically includes:</p>
-<ul>
-<li>Your name</li>
-<li>Your phone number and email address</li>
-<li>Your address or general location, if you include it</li>
-<li>A description of your plumbing issue or project</li>
-</ul>
-<p>If you call or email us directly, we receive whatever information you share in that conversation.</p>
+{% block head %}
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1025px)" href="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}">
+    <link rel="stylesheet" href="/assets/css/interior.css">
+{% endblock %}
 
-<h2>Information Collected Automatically</h2>
-<p>Like most websites, this site is served by a hosting provider that keeps basic server logs. These logs may include your IP address, browser type, the pages you requested, and the date and time of your visit. They are used to keep the site running and secure. We do not use this website to run advertising trackers. Our contact form uses a spam check that may process basic technical information about your visit to confirm you're a person.</p>
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
 
-<h2>How We Use Your Information</h2>
-<p>We use the information you send us to:</p>
-<ul>
-<li>Respond to your questions and requests</li>
-<li>Schedule and provide plumbing services you ask for</li>
-<li>Follow up about work we've done or discussed with you</li>
-<li>Keep records needed to run our business</li>
-</ul>
-<p>We don't sell, rent, or trade your personal information.</p>
+    <div id="banner-2285">
+        <div class="cs-container">
+            <span class="cs-int-title">Privacy Policy</span>
+            <div class="cs-breadcrumbs">
+                <a href="/" class="cs-link">Home</a>
+                <a href="/privacy-policy/" class="cs-link cs-active" aria-current="page">Privacy Policy</a>
+            </div>
+        </div>
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 608, height: 734, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 1980, height: 820, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl "/assets/images/why-choose-bg.jpg" | resize({ width: 2500, height: 647, position: "attention" }) | jpeg %}" alt="Copper piping and circulator pumps below a tankless water heater" width="1800" height="465" loading="eager" fetchpriority="high" decoding="async">
+        </picture>
+    </div>
 
-<h2>How Form Submissions Are Handled</h2>
-<p>Our contact form is processed by Netlify, the service that hosts this website. When you submit the form, your information is transmitted to and stored by Netlify so it can be delivered to us. Netlify handles that data under its own privacy policy. Beyond our hosting and form provider, we share your information only when needed to provide a service you've requested or when required by law.</p>
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
 
-<h2>How Long We Keep It</h2>
-<p>We keep your information only as long as we need it to respond to you, provide services, and meet our business and legal obligations.</p>
+    <section id="content-page-713">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1>Privacy Policy</h1>
+                <p>This policy explains what information {{ client.legalName }}, doing business as {{ client.name }} ("we," "us," or "our"), collects through this website and how we use it. We keep it simple: we collect only what we need to respond to you, and we don't sell your information.</p>
 
-<h2>Security</h2>
-<p>We take reasonable steps to protect the information you send us. No website or internet transmission is completely secure, so please don't send sensitive details, like payment card numbers, through the contact form.</p>
+                <h2>Information You Give Us</h2>
+                <p>When you fill out our contact form, we collect the information you choose to provide. That typically includes:</p>
+                <ul>
+                <li>Your name</li>
+                <li>Your phone number and email address</li>
+                <li>Your address or general location, if you include it</li>
+                <li>A description of your plumbing issue or project</li>
+                </ul>
+                <p>If you call or email us directly, we receive whatever information you share in that conversation.</p>
 
-<h2>Your Choices</h2>
-<p>You can ask us to update or delete the personal information you've sent us, or to stop contacting you, at any time. Just reach out using the details below.</p>
+                <h2>Information Collected Automatically</h2>
+                <p>Like most websites, this site is served by a hosting provider that keeps basic server logs. These logs may include your IP address, browser type, the pages you requested, and the date and time of your visit. They are used to keep the site running and secure. We do not use this website to run advertising trackers. Our contact form uses a spam check that may process basic technical information about your visit to confirm you're a person.</p>
 
-<h2>Children's Privacy</h2>
-<p>This website is intended for adults. We do not knowingly collect information from children under 13.</p>
+                <h2>How We Use Your Information</h2>
+                <p>We use the information you send us to:</p>
+                <ul>
+                <li>Respond to your questions and requests</li>
+                <li>Schedule and provide plumbing services you ask for</li>
+                <li>Follow up about work we've done or discussed with you</li>
+                <li>Keep records needed to run our business</li>
+                </ul>
+                <p>We don't sell, rent, or trade your personal information.</p>
 
-<h2>Changes to This Policy</h2>
-<p>We may update this policy from time to time. Any changes take effect when they are posted on this page. This policy is governed by the laws of the state in which {{ client.name }} operates.</p>
+                <h2>How Form Submissions Are Handled</h2>
+                <p>Our contact form is processed by Netlify, the service that hosts this website. When you submit the form, your information is transmitted to and stored by Netlify so it can be delivered to us. Netlify handles that data under its own privacy policy. Beyond our hosting and form provider, we share your information only when needed to provide a service you've requested or when required by law.</p>
 
-<h2>Contact Us</h2>
-<p>Questions about your privacy? Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, email us at <a href="mailto:{{ client.email }}">Click To Email</a>, or visit our <a href="/contact/">contact page</a>.</p>
+                <h2>How Long We Keep It</h2>
+                <p>We keep your information only as long as we need it to respond to you, provide services, and meet our business and legal obligations.</p>
+
+                <h2>Security</h2>
+                <p>We take reasonable steps to protect the information you send us. No website or internet transmission is completely secure, so please don't send sensitive details, like payment card numbers, through the contact form.</p>
+
+                <h2>Your Choices</h2>
+                <p>You can ask us to update or delete the personal information you've sent us, or to stop contacting you, at any time. Just reach out using the details below.</p>
+
+                <h2>Children's Privacy</h2>
+                <p>This website is intended for adults. We do not knowingly collect information from children under 13.</p>
+
+                <h2>Changes to This Policy</h2>
+                <p>We may update this policy from time to time. Any changes take effect when they are posted on this page. This policy is governed by the laws of the state in which {{ client.name }} operates.</p>
+
+                <h2>Contact Us</h2>
+                <p>Questions about your privacy? Call us at <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>, email us at <a href="mailto:{{ client.email }}">Click To Email</a>, or visit our <a href="/contact/">contact page</a>.</p>
+                <a href="/contact/" class="cs-button-solid">Schedule A Service Call</a>
+            </div>
+            <aside class="cs-aside">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 492, height: 616, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/gallery-1.jpg" | resize({ width: 880, height: 1100, position: "attention" }) | jpeg %}" alt="Tankless water heater installed in a closet with new copper and gas lines" width="440" height="550" loading="lazy" decoding="async">
+                </picture>
+                <div class="cs-card">
+                    <span class="cs-card-title">Need A Plumber?</span>
+                    <p class="cs-card-text">Tell us what's going on and we'll walk you through your options before any work starts.</p>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-card-phone">{{ client.phoneFormatted }}</a>
+                    <a href="mailto:{{ client.email }}" class="cs-button-outline">Click To Email</a>
+                </div>
+            </aside>
+        </div>
+    </section>
+{% endblock %}

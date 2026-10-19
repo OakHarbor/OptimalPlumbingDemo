@@ -1,0 +1,231 @@
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-1741 {
+        margin: 0 var(--panelInset);
+        /* 60px - 100px top and bottom */
+        padding: clamp(3.75rem, 7.82vw, 6.25rem) 0;
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (616/16rem);
+            margin: auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            /* 32px - 64px */
+            gap: clamp(2rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: (470/16rem);
+            margin: 0;
+        }
+
+        .cs-flex-group {
+            width: 100%;
+        }
+
+        .cs-faq-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: (20/16rem);
+        }
+
+        .cs-faq-item {
+            list-style: none;
+            width: 100%;
+            padding: (20/16rem) 0 0;
+            border-top: 1px solid var(--headerColor);
+            scroll-margin-top: (120/16rem);
+
+            &:last-of-type {
+                padding-bottom: (20/16rem);
+                border-bottom: 1px solid var(--headerColor);
+            }
+
+            &.active {
+                .cs-icon {
+                    background-image: url("/assets/images/minus.svg");
+                }
+
+                .cs-answer {
+                    grid-template-rows: 1fr;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .cs-question {
+            font-size: inherit;
+            margin: 0;
+        }
+
+        .cs-button {
+            font-family: var(--headerFont);
+            /* 16px - 18px */
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            font-weight: 800;
+            font-style: italic;
+            line-height: 1.5em;
+            text-align: left;
+            width: 100%;
+            padding: 0;
+            background-color: transparent;
+            color: var(--ink);
+            border: none;
+            display: flex;
+            align-items: flex-start;
+            /* 16px - 24px */
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .cs-icon {
+            width: (12.5/16rem);
+            height: 1.5em;
+            background: url("/assets/images/plus.svg") no-repeat center / (12.5/16rem) (12.5/16rem);
+            display: block;
+            flex: none;
+        }
+
+        .cs-answer {
+            display: grid;
+            grid-template-rows: 0fr;
+            visibility: hidden;
+            transition: grid-template-rows 0.3s, visibility 0.3s;
+        }
+
+        .cs-answer-inner {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .cs-item-text {
+            /* 16px - 18px */
+            font-size: clamp(1rem, 1.5vw, 1.125rem);
+            line-height: 1.5em;
+            margin: 0;
+            /* 28px - 36.5px */
+            padding: (10/16rem) 0 0 clamp(1.78125rem, 3.5vw, 2.28125rem);
+            color: var(--bodyTextColor);
+        }
+
+        .cs-gallery {
+            width: 100%;
+            /* 32px - 64px */
+            margin: clamp(2rem, 6vw, 4rem) 0 0;
+            padding: 0 1rem;
+            display: flex;
+            gap: (12/16rem);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 1rem;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .cs-picture {
+            width: 62%;
+            aspect-ratio: 328/400;
+            border-radius: var(--panelRadius);
+            overflow: hidden;
+            display: block;
+            position: relative;
+            flex: none;
+            scroll-snap-align: start;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #faq-1741 {
+        .cs-gallery {
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            /* 12px - 54px */
+            gap: clamp(0.75rem, 2.82vw, 3.375rem);
+            overflow: visible;
+        }
+
+        .cs-picture {
+            width: 100%;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #faq-1741 {
+        .cs-container {
+            max-width: (1312/16rem);
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .cs-content {
+            width: 36.7%;
+            max-width: (470/16rem);
+            flex: none;
+        }
+
+        .cs-flex-group {
+            max-width: (702/16rem);
+            flex: 1 1 auto;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #faq-1741 {
+            .cs-title,
+            .cs-button {
+                color: #fff;
+            }
+
+            .cs-item-text {
+                color: #dcdcdc;
+            }
+
+            .cs-faq-item {
+                border-color: var(--light);
+            }
+
+            .cs-icon {
+                filter: invert(1);
+            }
+        }
+    }
+}
